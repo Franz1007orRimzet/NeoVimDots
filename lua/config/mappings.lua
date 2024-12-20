@@ -11,8 +11,8 @@ return {
   {'<M-j>', "<cmd>m .+1<CR>==", desc = "Move line down", mode = 'n' },
   {'<M-k>', "<cmd>m .-2<CR>==", desc = "Move line down", mode = 'n' },
 
-  {'<M-j>', "<cmd>'<,'>m '<-2<cr>gv=gv", desc = "Move lines down", mode = 'v'},
-  {'<M-k>', "<cmd>'<,'>m '>+1<cr>gv=gv", desc = "Move lines up", mode = 'v'},
+  {'<M-j>', "<cmd>'<,'>m '>+1<cr>gv=gv", desc = "Move lines up", mode = 'v'},
+  {'<M-k>', "<cmd>'<,'>m '<-2<cr>gv=gv", desc = "Move lines down", mode = 'v'},
 
   {"<C-b>", "<ESC>^i", desc = "Beginning of line", mode = 'i'},
   {"<C-e>", "<End>", desc = "End of line", mode = 'i'},

@@ -20,6 +20,8 @@ M.init = function ()
   o.expandtab = true
   o.autoindent = true
   o.smartindent = true
+
+  o.cursorline = true
 end
 
 return M

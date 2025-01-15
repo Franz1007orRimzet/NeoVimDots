@@ -1,13 +1,18 @@
 local M = {}
 
-M.load = function (plugins)
-  require "config.lazy.bootstrap".bootstrap()
+local is_loaded = false
 
-  require "lazy".setup({
-    spec = { import = plugins },
-    install = { colorscheme = { "catppuccin" } },
-    checker = { enabled = false }
-  })
+M.load = function(plugins)
+  if not is_loaded then
+    require "config.lazy.bootstrap".init()
+
+    require "lazy".setup({
+      spec = { import = plugins },
+      install = { colorscheme = { "catppuccin" } },
+      checker = { enabled = false }
+    })
+    is_loaded = true
+  end
 end
 
 return M

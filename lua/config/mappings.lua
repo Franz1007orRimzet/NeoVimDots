@@ -4,7 +4,7 @@ return {
   {'<C-y>', "<cmd> %y+ <CR>", desc = "Copy whole buffer", mode = 'n'},
 
   {'<leader>P', "\"_dP", desc = "Paste without copy", hidden = true, mode = 'v'},
-  {'<leader>C', "\"_c", desc = "Replace without copy", hidden = true, mode = 'n'},
+  {'<leader>C', "\"_c", desc = "Replace without copy", hidden = true, mode = {'n', 'v'}},
 
   {';', ':', desc = "Enter command mode", mode = 'nv'},
 

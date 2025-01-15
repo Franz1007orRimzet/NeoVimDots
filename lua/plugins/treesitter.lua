@@ -1,5 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  main = 'nvim-treesitter.configs',
   lazy = false,
   opts = {
     ensure_installed = {'c', 'lua', 'vimdoc', 'lua', 'vim', 'query', 'markdown', 'markdown_inline'},
@@ -9,8 +10,5 @@ return {
       additional_vim_regex_highlighting = false,
     }
   },
-  config = function (_, opts)
-    require 'nvim-treesitter.configs'.setup(opts)
-  end,
 }
 

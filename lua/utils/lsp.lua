@@ -42,8 +42,19 @@ local function get_local_lsps()
   return client_names
 end
 
+local function setup_server(server, config)
+  local lspconfig = require('lspconfig')
+
+  if require('toggles').blink then
+    config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+  end
+
+  lspconfig[server].setup(config)
+end
+
 M.format = format
 M.get_local_lsps = get_local_lsps
 M.lsp_has_formatter = lsp_has_formatter
+M.setup_server = setup_server
 
 return M

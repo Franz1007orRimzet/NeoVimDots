@@ -6,7 +6,7 @@ return {
     handlers = {
       function(server_name)
         local servers = require 'config.lsp-servers'.mason
-        require('lspconfig')[server_name].setup(servers[server_name] or {})
+        require('utils.lsp').setup_server(server_name, servers[server_name] or {})
       end,
     },
   }

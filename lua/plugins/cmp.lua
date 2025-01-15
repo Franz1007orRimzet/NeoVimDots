@@ -5,8 +5,10 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'f3fora/cmp-spell',
     -- 'saadparwaiz1/cmp_luasnip',
   },
+  cond = not require 'toggles'.blink,
   config = function ()
     local cmp = require 'cmp'
 
@@ -18,6 +20,9 @@ return {
           name = 'path',
           trailing_slash = true,
         },
+        {
+          name = 'spell',
+        }
       },
       snippet = {
         expand = function (args)
@@ -26,10 +31,15 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<M-Down'] = cmp.mapping.scroll_docs(-4),
+        ['<M-Up>'] = cmp.mapping.scroll_docs(4),
       }),
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+      },
+      view = {
+        entries = {name = 'custom', selection_order = 'near_cursor' }
       },
     })
   end

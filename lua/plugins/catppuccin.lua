@@ -15,7 +15,8 @@ return {
       telescope = {
         enabled = true
       },
-      which_key = true
+      which_key = true,
+      blink_cmp = true,
     }
   },
   init = function ()

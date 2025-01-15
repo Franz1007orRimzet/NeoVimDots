@@ -7,18 +7,18 @@ return {
     {'zM', "<Cmd>lua require('ufo').closeAllFolds()<CR>", desc = "Close all folds"}
   },
 
-  config = function ()
+  init = function ()
     local o = vim.o
 
     o.foldcolumn = '1'
     o.foldlevel = 99
     o.foldlevelstart = 99
     o.foldenable = true
+  end,
 
-    require 'ufo'.setup({
-      provider_selector = function (_, _, _)
-        return {'treesitter', 'indent'}
-      end
-    })
-  end
+  opts = {
+    provider_selector = function (_, _, _)
+      return {'treesitter', 'indent'}
+    end
+  },
 }

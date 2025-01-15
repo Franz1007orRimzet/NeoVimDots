@@ -6,7 +6,8 @@ return {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
       lazy = true,
-    }
+    },
+    'olimorris/persisted.nvim',
   },
   keys = {
     { '<leader>ff', "<Cmd>lua require('telescope.builtin').find_files()<CR>",                desc = "Find file" },
@@ -23,5 +24,6 @@ return {
     local telescope = require('telescope')
 
     telescope.load_extension('fzf')
+    telescope.load_extension('persisted')
   end
 }

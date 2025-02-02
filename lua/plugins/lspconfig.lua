@@ -29,7 +29,6 @@ return {
 
         wk.add(
           {
-            { 'K',          lsp.hover,                   desc = "Floating info" },
             { 'gd',         lsp.definition,              desc = "Go to definition" },
             { 'gD',         lsp.declaration,             desc = "Go to declaration" },
             { 'gi',         lsp.implementation,          desc = "Go to implementation" },

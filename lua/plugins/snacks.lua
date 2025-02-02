@@ -16,20 +16,23 @@ return {
       enabled = true,
     },
     quickfile = {
-      enabled = true
+      enabled = true,
     },
     rename = {
-      enabled = true
+      enabled = true,
     },
     statuscolumn = {
-      enabled = true
+      enabled = true,
     },
-    -- scratch = {
-    --   enabled = true
-    -- },
+    dim = {
+      enabled = true,
+      animate = {
+        enabled = false,
+      }
+    },
     dashboard = {
       enabled = true,
-    }
+    },
   },
   init = function ()
     require ('which-key').add ({
@@ -44,6 +47,8 @@ return {
     {'<leader>gL', function () Snacks.lazygit.log() end, desc = "Git log"},
     {'<leader>cR', function () Snacks.rename.rename_file() end, desc = "Rename File"},
     {'<leader>bd', function () Snacks.bufdelete() end, desc = "Delete Buffer"},
+    {'<leader>cd', function () Snacks.dim.enable() end, desc = "Dim not focused"},
+    {'<leader>cD', function () Snacks.dim.disable() end, desc = "Dispable dimming"},
     -- {'<leader>bs', function () Snacks.scratch() end, desc = "Toggle scratch buffer"},
     -- {'<leader>bS', function () Snacks.scratch.select() end, desc = "Select scratch buffer"},
   }

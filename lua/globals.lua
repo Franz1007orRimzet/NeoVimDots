@@ -4,6 +4,8 @@ M.init = function ()
   local o = vim.o
   local g = vim.g
 
+  o.autoread = true
+
   o.number = true
   o.relativenumber = true
   g.mapleader = " "

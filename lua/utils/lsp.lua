@@ -43,13 +43,18 @@ local function get_local_lsps()
 end
 
 local function setup_server(server, config)
-  local lspconfig = require('lspconfig')
+  -- local lspconfig = require('lspconfig')
 
   if require('toggles').blink then
     config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
   end
 
-  lspconfig[server].setup(config)
+  -- lspconfig[server].setup(config)
+  if next(config) ~= nil then
+    vim.lsp.config(server, config)
+  end
+
+  vim.lsp.enable(server)
 end
 
 M.format = format

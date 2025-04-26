@@ -50,7 +50,14 @@ return {
       lualine_b = { 'branch', 'diff' },
       lualine_c = { 'filename', 'diagnostics', session_icon },
       lualine_x = { get_lsps_formatted, 'filetype' },
-      lualine_y = { 'searchcount', 'progress' },
+      lualine_y = { {'searchcount',
+        fmt =function (str)
+          if str == "[0/0]" then
+            return ""
+          end
+          return str
+        end
+      }, 'progress' },
       lualine_z = { 'selectioncount', 'location' }
     },
     inactive_sections = {

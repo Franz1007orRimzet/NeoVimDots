@@ -1,10 +1,14 @@
+local function code_action()
+  vim.cmd.RustLsp 'codeAction'
+end
+
 local wk = require('which-key')
 
 wk.add(
 {
-  -- {'<leader>ca', vim.cmd.RustLsp('codeAction'), desc = "Code action"},
-  -- {'<F4>', vim.cmd.RustLsp('codeAction'), desc = "Code action"},
-  {'K', vim.cmd.RustLsp('hover', 'actrions')},
+  {'K', function() vim.cmd.RustLsp {'hover', 'actions'} end},
+  {'<F4>', code_action},
+  {'<leader>ca', code_action},
 },
 {
   mode = 'n',

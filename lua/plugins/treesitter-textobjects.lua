@@ -3,6 +3,7 @@ return {
   lazy = false,
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   main = 'nvim-treesitter.configs',
+  -- cond = false,
   opts = {
     textobjects = {
       select = {

@@ -16,15 +16,13 @@ M.init = function ()
 
   o.scrolloff = 5
 
-
-  -- o.tabstop = 4
-  o.shiftwidth = 2
-  o.expandtab = true
-  o.autoindent = true
-  o.smartindent = true
-  o.cindent = true
-
   o.cursorline = true
+
+  vim.filetype.add{
+    pattern = {
+      ['${XDG_CONFIG_HOME}/hypr/.*%.conf'] = 'hyprlang'
+    }
+  }
 end
 
 return M

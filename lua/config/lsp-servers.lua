@@ -1,6 +1,6 @@
 local M = {
   system = {},
-  mason = {}
+  mason = {},
 }
 
 M.system.clangd = {
@@ -25,6 +25,6 @@ M.system.clangd = {
 --   enable_import_completion = true,
 -- }
 
-M.system.zls = {}
+-- M.system.zls = {}
 
 return M

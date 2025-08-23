@@ -3,6 +3,7 @@ local M = {}
 M.init = function ()
   local o = vim.o
   local g = vim.g
+  local opt = vim.opt
 
   o.autoread = true
 
@@ -17,6 +18,10 @@ M.init = function ()
   o.scrolloff = 5
 
   o.cursorline = true
+
+  opt.tabstop = 4
+  opt.shiftwidth = 4
+  opt.expandtab = true
 
   vim.filetype.add{
     pattern = {

@@ -45,9 +45,7 @@ end
 local function setup_server(server, config)
   -- local lspconfig = require('lspconfig')
 
-  if require('toggles').blink then
-    config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-  end
+  config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 
   -- lspconfig[server].setup(config)
   if next(config) ~= nil then

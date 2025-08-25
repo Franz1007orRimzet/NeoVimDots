@@ -9,16 +9,6 @@ return {
   priority = 52,
 
   config = function()
-    if not require('toggles').blink then
-      local lspconfig = require 'lspconfig'
-      local lspconfig_defaults = lspconfig.util.default_config
-      lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-        'force',
-        lspconfig_defaults.capabilities,
-        require('cmp_nvim_lsp').default_capabilities()
-      )
-    end
-
     -- This is where you enable features that only work
     -- if there is a language server active in the file
     vim.api.nvim_create_autocmd('LspAttach', {

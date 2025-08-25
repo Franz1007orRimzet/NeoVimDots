@@ -1,7 +1,6 @@
 return {
   'saghen/blink.cmp',
   version = '1.*',
-  cond = require('toggles').blink,
   build = 'cargo build --release',
 
   ---@module 'blink.cmp'

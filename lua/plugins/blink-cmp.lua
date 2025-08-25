@@ -1,6 +1,7 @@
 return {
   'saghen/blink.cmp',
   version = '1.*',
+  cond = require('toggles').blink,
   build = 'cargo build --release',
 
   ---@module 'blink.cmp'
@@ -19,5 +20,6 @@ return {
     },
     signature = { enabled = true },
     completion = { trigger = { prefetch_on_insert = false } },
+    fuzzy = { implementation = "prefer_rust_with_warning" },
   }
 }

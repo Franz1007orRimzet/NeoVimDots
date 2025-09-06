@@ -11,5 +11,9 @@ return {
   },
   ---@module 'avante'
   ---@type avante.Config
-  opts = {}
+  opts = {
+    selection = {
+      enabled = false,
+    },
+  }
 }
